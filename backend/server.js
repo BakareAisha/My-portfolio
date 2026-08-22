@@ -4,7 +4,7 @@ const nodemailer = require("nodemailer");
 require("dotenv").config();
 
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 app.use(cors());
 app.use(express.json());
@@ -39,7 +39,6 @@ app.post("/api/contact", async (req, res) => {
     message: "Please fill in all fields.",
   });
 }
-
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 if (!emailRegex.test(email)) {
@@ -53,8 +52,6 @@ if (!emailRegex.test(email)) {
     const safeName = escapeHtml(name);
     const safeEmail = escapeHtml(email);
     const safeMessage = escapeHtml(message).replace(/\n/g, "<br>");
-
-    // Email YOU receive
     await transporter.sendMail({
       from: process.env.EMAIL_USER,
       to: process.env.EMAIL_USER,
@@ -98,7 +95,6 @@ if (!emailRegex.test(email)) {
       `,
     });
 
-    // Confirmation email the VISITOR receives
     await transporter.sendMail({
       from: process.env.EMAIL_USER,
       to: email,
@@ -161,6 +157,6 @@ if (!emailRegex.test(email)) {
 
 
 
-app.listen(PORT, () =>{
-    console.log(`Server running on http://localhost:${PORT}`);
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
