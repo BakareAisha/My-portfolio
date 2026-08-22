@@ -38,7 +38,7 @@ const Projects = () => {
             </div>
           </div>
           <div className="project-links">
-            <a className="project-link" href="#portfolio-live">
+            <a className="project-link" href="https://aishat-portfolio.netlify.app">
               Live Demo <FiExternalLink />
             </a>
             <a className="project-link" href="#portfolio-github">
