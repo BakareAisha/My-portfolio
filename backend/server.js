@@ -7,11 +7,6 @@ const app = express();
 
 const PORT = process.env.PORT || 5000;
 
-
-console.log(
-  "RESEND KEY EXISTS:",
-  !!process.env.RESEND_API_KEY
-);
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 app.use(cors());
@@ -29,14 +24,12 @@ function escapeHtml(text) {
 app.post("/api/contact", async (req, res) => {
   const { name, email, message } = req.body;
 
-
   if (!name || !email || !message) {
     return res.status(400).json({
       success: false,
       message: "Please fill in all fields.",
     });
   }
-
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -52,55 +45,81 @@ app.post("/api/contact", async (req, res) => {
     const safeEmail = escapeHtml(email);
     const safeMessage = escapeHtml(message).replace(/\n/g, "<br>");
 
-    const { data: ownerEmail, error: ownerError } =
-      await resend.emails.send({
-        from: "Portfolio <onboarding@resend.dev>",
-        to: [process.env.EMAIL_USER],
-        replyTo: email,
-        subject: `New Portfolio Message from ${safeName}`,
-        html: `
-          <div style="font-family: Arial, sans-serif; max-width: 600px; margin: auto; padding: 30px; background: #f5f5f5;">
-            <div style="background: white; padding: 30px; border-radius: 12px;">
+    const { data, error } = await resend.emails.send({
+      from: "Portfolio <onboarding@resend.dev>",
+      to: ["bakareaisha006@gmail.com"],
+      replyTo: email,
+      subject: `New Portfolio Message from ${safeName}`,
+      html: `
+        <div style="
+          font-family: Arial, sans-serif;
+          max-width: 600px;
+          margin: auto;
+          padding: 30px;
+          background: #f5f5f5;
+        ">
 
-              <h1 style="color: #222;">
-                New Portfolio Message
-              </h1>
+          <div style="
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+          ">
 
-              <p style="color: #666;">
-                Someone just contacted you through your portfolio.
+            <h1 style="color: #222;">
+              New Portfolio Message
+            </h1>
+
+            <p style="color: #666;">
+              Someone just contacted you through your portfolio.
+            </p>
+
+            <div style="
+              background: #f8f8f8;
+              padding: 20px;
+              border-radius: 8px;
+            ">
+
+              <p>
+                <strong>Name:</strong> ${safeName}
               </p>
 
-              <div style="background: #f8f8f8; padding: 20px; border-radius: 8px;">
-                <p>
-                  <strong>Name:</strong> ${safeName}
-                </p>
-
-                <p>
-                  <strong>Email:</strong> ${safeEmail}
-                </p>
-              </div>
-
-              <h3 style="margin-top: 25px;">
-                Message
-              </h3>
-
-              <p style="line-height: 1.6; color: #555;">
-                ${safeMessage}
-              </p>
-
-              <hr style="border: none; border-top: 1px solid #eee; margin: 30px 0;">
-
-              <p style="font-size: 13px; color: #999;">
-                Sent from your portfolio contact form.
+              <p>
+                <strong>Email:</strong> ${safeEmail}
               </p>
 
             </div>
-          </div>
-        `,
-      });
 
-    if (ownerError) {
-      console.error("Owner email error:", ownerError);
+            <h3 style="margin-top: 25px;">
+              Message
+            </h3>
+
+            <p style="
+              line-height: 1.6;
+              color: #555;
+            ">
+              ${safeMessage}
+            </p>
+
+            <hr style="
+              border: none;
+              border-top: 1px solid #eee;
+              margin: 30px 0;
+            ">
+
+            <p style="
+              font-size: 13px;
+              color: #999;
+            ">
+              Sent from your portfolio contact form.
+            </p>
+
+          </div>
+        </div>
+      `,
+    });
+
+    if (error) {
+      console.error("Resend error:", error);
 
       return res.status(500).json({
         success: false,
@@ -108,54 +127,7 @@ app.post("/api/contact", async (req, res) => {
       });
     }
 
-    const { data: visitorEmail, error: visitorError } =
-      await resend.emails.send({
-        from: "Aisha Bakare <onboarding@resend.dev>",
-        to: [email],
-        subject: "Thanks for contacting me!",
-        html: `
-          <div style="font-family: Arial, sans-serif; max-width: 600px; margin: auto; padding: 30px; background: #f5f5f5;">
-            <div style="background: white; padding: 30px; border-radius: 12px;">
-
-              <h1 style="color: #222;">
-                Thanks for reaching out!
-              </h1>
-
-              <p style="color: #555; font-size: 16px;">
-                Hi ${safeName},
-              </p>
-
-              <p style="color: #555; line-height: 1.6;">
-                Thank you for contacting me through my portfolio.
-                I've received your message and I'll get back to you as soon as possible.
-              </p>
-
-              <div style="margin-top: 25px; padding: 20px; background: #f8f8f8; border-radius: 8px;">
-
-                <p style="margin: 0; color: #666;">
-                  <strong>Your message:</strong>
-                </p>
-
-                <p style="color: #555; line-height: 1.6;">
-                  ${safeMessage}
-                </p>
-
-              </div>
-
-              <p style="margin-top: 30px; color: #555;">
-                Best regards,<br>
-                <strong>Aisha Bakare</strong><br>
-                Frontend Developer
-              </p>
-
-            </div>
-          </div>
-        `,
-      });
-
-    if (visitorError) {
-      console.error("Visitor email error:", visitorError);
-    }
+    console.log("Email sent successfully:", data);
 
     return res.json({
       success: true,
