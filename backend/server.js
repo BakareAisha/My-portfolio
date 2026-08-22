@@ -7,6 +7,11 @@ const app = express();
 
 const PORT = process.env.PORT || 5000;
 
+
+console.log(
+  "RESEND KEY EXISTS:",
+  !!process.env.RESEND_API_KEY
+);
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 app.use(cors());
