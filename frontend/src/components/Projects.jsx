@@ -28,7 +28,7 @@ const Projects = () => {
           <div className="project-card-content">
             <h2 className="project-name">Portfolio Website</h2>
             <p className="project-description">
-              A responsive personal portfolio website built with React, featuring a functional contact system powered by a Node.js and Express backend. Visitors can send messages and receive an automatic confirmation email.
+              A responsive personal portfolio website built with React, featuring a functional contact system powered by a Node.js and Express backend. Visitors can send me messages directly through the contact form, and I receive an email notification.
             </p>
             <div className="project-technologies">
               <span className="technology-tag">React</span>

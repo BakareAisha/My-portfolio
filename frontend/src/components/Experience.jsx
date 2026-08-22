@@ -19,7 +19,7 @@ const Experience = () => {
       </article>
       <article className="experience-item">
         <IoMdLaptop className="experience-icon experience-icon-pink" />
-        <span className="experience-date">2025-2027</span>
+        <span className="experience-date">2025-2026</span>
         <h2 className="experience-role">Full Stack Developer Intern</h2>
         <span className="experience-organization">SQI College of ICT</span>
         <p className="experience-description">
@@ -33,7 +33,7 @@ const Experience = () => {
         <h2 className="experience-role">B.Sc.Computer Science</h2>
         <span className="experience-organization">Bowen University</span>
         <p className="experience-description">
-          Studied Computer Science with a strong passion for software
+          Studying Computer Science with a strong passion for software
           development.
         </p>
       </article>
