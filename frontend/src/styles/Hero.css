@@ -1,0 +1,386 @@
+
+.hero {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4rem;
+  max-width: 1280px;
+  min-height: auto;
+  margin: 0 auto;
+  padding: 2.5rem 4rem;
+}
+
+.hero-content {
+  flex: 1 1 480px;
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: break-word;
+}
+
+.hero-content h1 {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  color: #e75cf6;
+  margin: 0 0 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.hero-content .hero-greeting {
+  display: block;
+}
+
+.hero-content .hero-name {
+  display: block;
+  color: #f5f5f5;
+  font-size: 4rem;
+  line-height: 1.05;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.hero-content h2 {
+  display: inline-block;
+  max-width: 100%;
+  margin: .25rem 0 1.25rem;
+  background: linear-gradient(90deg, #8B5CF6, #ec4899);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  font-size: 4rem;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+.hero-content p {
+  max-width: 600px;
+  margin: 0 0 2rem;
+  color: #a1a1aa;
+  font-size: 1.25rem;
+  line-height: 1.7;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+
+.view-work-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 14px 20px;
+  background: linear-gradient(90deg, #7c3aed, #a855f7);
+  color: white;
+  border: none;
+  border-radius: 9px;
+  font-size: 17px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.contact-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 14px 20px;
+  background: transparent;
+  color: white;
+  border: 1px solid #8b5cf6;
+  border-radius: 9px;
+  font-size: 17px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.view-work-button svg,
+.contact-button svg {
+  font-size: 30px;
+}
+
+.view-work-button:hover,
+.contact-button:hover {
+  transform: translateY(-3px);
+}
+
+.view-work-button:hover {
+  box-shadow: 0 12px 26px rgb(236 72 153 / 30%);
+}
+
+.contact-button:hover {
+  background-color: rgb(139 92 246 / 10%);
+  box-shadow: 0 10px 24px rgb(139 92 246 / 25%);
+}
+
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.social-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  border: 1px solid #8b5cf6;
+  border-radius: 15%;
+  background: transparent;
+  color: #f5f5f5;
+  font-size: 1.3rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s ease,
+              color 0.2s ease,
+              background-color 0.2s ease,
+              box-shadow 0.2s ease;
+}
+
+.social-icons a:hover {
+  transform: translateY(-3px);
+  background-color: #8b5cf6;
+  color: #ffffff;
+  box-shadow: 0 8px 18px rgb(139 92 246 / 30%);
+}
+
+
+
+.hero-image {
+  position: relative;
+  width: 50%;
+  max-width: 500px;
+}
+
+.hero-image::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 90%;
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(
+    circle,
+    #ca0e69 0%,
+    #af06d5 45%,
+    transparent 70%
+  );
+  filter: blur(40px);
+  z-index: 0;
+}
+
+.hero-image img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transform: translate(-18%, -15%);
+  -webkit-mask-image: linear-gradient(
+  to bottom,
+  black 80%,
+  transparent 100%
+);
+
+mask-image: linear-gradient(
+  to bottom,
+  black 80%,
+  transparent 100%
+);
+}
+
+.code-card {
+  position: absolute;
+  bottom: 40px;
+  width: 260px;
+  padding: 20px;
+  background: rgba(9, 10, 12, 0.9);
+  border: 1px solid #252733;
+  border-radius: 16px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  z-index: 2;
+  margin-left: 55px;
+}
+
+.code-dots {
+  display: flex;
+  gap: 7px;
+  margin-bottom: 15px;
+}
+
+.code-dots span {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+}
+
+.code-dots span:nth-child(1) {
+  background: #ef4444;
+}
+
+.code-dots span:nth-child(2) {
+  background: #facc15;
+}
+
+.code-dots span:nth-child(3) {
+  background: #22c55e;
+}
+
+.code-card pre {
+  margin: 0;
+  font-family: "Courier New", monospace;
+  font-size: 13px;
+  line-height: 1.7;
+  white-space: pre-wrap;
+}
+
+.pink {
+  color: #EC4899;
+}
+
+.purple {
+  color: #A78BFA;
+}
+
+
+
+.yellow {
+  color: #FBBF24;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    position: relative;
+    display: block;
+    min-height: 620px;
+    padding: 2rem 2rem;
+    overflow: hidden;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 60%;
+    text-align: left;
+  }
+
+  .hero-content .hero-name {
+    font-size: clamp(2.2rem, 7vw, 3.5rem);
+    white-space: nowrap;
+  }
+
+  .hero-content h2 {
+    font-size: clamp(1.5rem, 4vw, 2.2rem);
+    white-space: normal;
+  }
+
+  .hero-content p {
+    max-width: 320px;
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+
+  .hero-content p br {
+    display: none;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .view-work-button,
+  .contact-button {
+    width: 190px;
+    min-width: max-content;
+    padding: 11px 14px;
+    font-size: 0.85rem;
+    white-space: nowrap;
+  }
+
+  .social-icons {
+    margin-top: 1.25rem;
+  }
+
+  .hero-image {
+    position: absolute;
+    top: 100px;
+    right: -8%;
+    z-index: 1;
+    width: 68%;
+    max-width: 460px;
+  }
+
+  .code-card {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    min-height: 530px;
+    padding: 1.5rem 1rem;
+  }
+
+  .hero-content {
+    max-width: 68%;
+  }
+
+  .hero-content h1 {
+    font-size: 0.85rem;
+  }
+
+  .hero-content .hero-name {
+    font-size: clamp(1.75rem, 9vw, 2.35rem);
+    white-space: nowrap;
+  }
+
+  .hero-content h2 {
+    font-size: clamp(1.2rem, 5vw, 1.6rem);
+    margin-bottom: 1rem;
+  }
+
+  .hero-content p {
+    max-width: 230px;
+    font-size: 0.75rem;
+  }
+
+  .hero-content p br {
+    display: none;
+  }
+
+  .hero-image {
+    top: 115px;
+    right: -12%;
+    width: 72%;
+  }
+
+  .view-work-button,
+  .contact-button {
+    width: 175px;
+    min-width: max-content;
+    font-size: 0.72rem;
+    white-space: nowrap;
+  }
+
+  .social-icons a {
+    width: 2.2rem;
+    height: 2.2rem;
+  }
+}

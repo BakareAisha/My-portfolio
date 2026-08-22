@@ -1,0 +1,120 @@
+.navbar {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    max-width: 1180px;
+    margin: 22px auto 0;
+    padding: 17px 22px;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    background: rgba(9, 9, 14, .82);
+    backdrop-filter: blur(16px);
+}
+
+.nav-items {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    color: #f7f4fb;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+}
+
+.logo span {
+    color: var(--pink);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.8rem;
+    flex: 1;
+}
+
+.nav-links a,
+.download-btn {
+    color: #d6d1df;
+    font-size: .78rem;
+    text-decoration: none;
+    transition: color .2s ease;
+}
+
+.nav-links a:first-child,
+.nav-links a:hover,
+.download-btn:hover {
+    color: #b975ff;
+}
+
+.download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: .45rem;
+    padding: .6rem .85rem;
+    border: 1px solid #7f4bcc;
+    border-radius: 7px;
+}
+
+.menu-btn {
+    display: none;
+    border: 0;
+    background: transparent;
+    color: #bd69f8;
+    font-size: 1.6rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+@media (max-width: 760px) {
+    .navbar {
+        margin: 12px 12px 0;
+        padding: 13px 16px;
+        border-radius: 15px;
+    }
+
+    .nav-items {
+        width: 100%;
+    }
+
+    .menu-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: calc(100% + 8px);
+        left: 0;
+        right: 0;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 1.2rem;
+        padding: 1.3rem 1.5rem;
+        border: 1px solid rgba(155, 92, 255, .4);
+        border-radius: 12px;
+        background: #090910;
+        box-shadow: 0 18px 45px rgba(0, 0, 0, .5);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        font-size: .9rem;
+    }
+
+    .navbar>div:last-child {
+        display: none;
+    }
+}

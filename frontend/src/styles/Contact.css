@@ -1,0 +1,197 @@
+.contact-section {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	align-items: center;
+	gap: 5rem;
+	max-width: 1280px;
+	margin: 4rem auto 0;
+	padding: 5rem 4rem;
+	border-top: 1px solid #A1A1AA;
+	color: #f5f5f5;
+}
+
+.contact-title {
+	margin: 0 0 .75rem;
+	color: #8b5cf6;
+	font-size: 1rem;
+	text-transform: uppercase;
+}
+
+.contact-intro {
+	display: flex;
+	flex-direction: column;
+	gap: 1.1rem;
+}
+
+.contact-subtitle {
+	margin: 0 0 1.5rem;
+	color: #ffffff;
+	font-size: 2rem;
+}
+
+.contact-description {
+	margin: 0;
+	color: #a1a1aa;
+	line-height: 1.7;
+}
+
+.contact-details {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+}
+
+.contact-detail {
+	display: flex;
+	align-items: center;
+	gap: 1.25rem;
+}
+
+.contact-detail-icon {
+	flex: 0 0 auto;
+	width: 2.75rem;
+	height: 2.75rem;
+	padding: .55rem;
+	font-size: 1.25rem;
+	line-height: 1;
+    background: transparent;
+    border-radius: 8px;
+    border:1px solid #a855f7;
+}
+
+.contact-email-icon {
+	color: #8b5cf6;
+}
+
+.contact-phone-icon {
+    border:1px solid #ec4899;
+	color: #ec4899;
+}
+
+.contact-location-icon {
+	color: #a855f7;
+}
+
+.contact-detail-content {
+	display: flex;
+	flex-direction: column;
+	gap: .25rem;
+}
+
+.contact-detail-label {
+	color: #ffffff;
+	font-weight: 600;
+}
+
+.contact-detail-value {
+	color: #a1a1aa;
+	text-decoration: none;
+}
+
+.contact-form {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	width: 100%;
+	min-height: 28rem;
+	box-sizing: border-box;
+	padding: 2.5rem;
+	border: 1px solid #3f3f46;
+	border-radius: 12px;
+	background: #12141A;
+}
+
+.contact-input,
+.contact-message {
+	width: 100%;
+	padding: 1rem;
+	border: 1px solid #3f3f46;
+	background: transparent;
+	color: #ffffff;
+    border-radius: 10px;
+	font: inherit;
+}
+
+.contact-message {
+	min-height: 11rem;
+	resize: vertical;
+}
+
+.contact-input::placeholder,
+.contact-message::placeholder {
+	color: #a1a1aa;
+}
+
+.contact-submit {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: .5rem;
+	align-self: flex-start;
+	padding: .85rem 1.25rem;
+	border: 0;
+	background: #8b5cf6;
+	color: #ffffff;
+	font: inherit;
+	font-weight: 600;
+	cursor: pointer;
+    width:100%;
+    border-radius: 10px;
+}
+
+.contact-submit svg {
+	font-size: 1.25rem;
+}
+
+
+@media (max-width: 900px) {
+	.contact-section {
+		grid-template-columns: 1fr;
+		gap: 2.5rem;
+		margin-top: 2rem;
+		padding: 3.5rem 2rem;
+	}
+
+	.contact-form {
+		min-height: auto;
+		padding: 1.5rem;
+	}
+}
+
+@media (max-width: 480px) {
+	.contact-section {
+		gap: 2rem;
+		margin-top: 1.5rem;
+		padding: 2.5rem 1rem;
+	}
+
+	.contact-subtitle {
+		font-size: 1.5rem;
+	}
+
+	.contact-description {
+		font-size: .9rem;
+	}
+
+	.contact-detail {
+		align-items: flex-start;
+		gap: .85rem;
+	}
+
+	.contact-detail-icon {
+		width: 2.4rem;
+		height: 2.4rem;
+	}
+
+	.contact-detail-value {
+		overflow-wrap: anywhere;
+	}
+
+	.contact-form {
+		padding: 1rem;
+	}
+
+	.contact-message {
+		min-height: 8rem;
+	}
+}

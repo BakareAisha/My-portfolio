@@ -1,0 +1,164 @@
+.experience-section {
+  max-width: 1280px;
+  margin: 4rem auto 0;
+  padding: 5rem 4rem;
+  border-top: 1px solid #A1A1AA;
+}
+
+.experience-title {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #8b5cf6;
+}
+
+.experience-subtitle {
+  font-size: 28px;
+  color: #f5f5f5;
+  margin-bottom: 60px;
+}
+
+.experience-item {
+  position: relative;
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 0 0 55px 70px;
+  border-left: 2px solid #e9d5ff;
+}
+
+.experience-icon {
+  position: absolute;
+  left: -23px;
+  top: 0;
+  width: 44px;
+  height: 44px;
+  padding: 10px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 5px 20px rgba(139, 92, 246, 0.15);
+  font-size: 24px;
+  z-index: 2;
+}
+
+.experience-icon-gradient {
+  color: #8b5cf6;
+  border: 2px solid #d8b4fe;
+}
+
+
+.experience-icon-pink {
+  color: #ec4899;
+  border: 2px solid #fbcfe8;
+}
+
+
+.experience-icon-purple {
+  color: #8b5cf6;
+  border: 2px solid #ddd6fe;
+}
+
+
+.experience-date {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #f5f5f5;
+  background: transparent;
+  border: 1px solid #71717a;
+  padding: 6px 14px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+}
+
+
+
+.experience-role {
+  font-size: 24px;
+  font-weight: 700;
+  color: #f5f5f5;
+  margin: 0 0 8px;
+}
+
+
+.experience-organization {
+  display: block;
+  font-size: 15px;
+  font-weight: 600;
+  color: #f5f5f5;
+  margin-bottom: 12px;
+}
+
+
+
+.experience-description {
+  max-width: 650px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #71717a;
+  margin: 0;
+}
+
+.experience-item:last-child {
+  border-left: 2px solid transparent;
+  padding-bottom: 0;
+}
+
+
+
+.experience-item:hover .experience-icon {
+  transform: scale(1.08);
+  box-shadow: 0 8px 25px rgba(139, 92, 246, 0.2);
+  transition: 0.3s ease;
+}
+
+@media (max-width: 900px) {
+  .experience-section {
+    margin-top: 2rem;
+    padding: 3.5rem 2rem;
+  }
+
+  .experience-subtitle {
+    margin-bottom: 3rem;
+    font-size: 2rem;
+  }
+
+  .experience-item {
+    padding-left: 3.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .experience-section {
+    margin-top: 1.5rem;
+    padding: 2.5rem 1rem;
+  }
+
+  .experience-title {
+    font-size: 1rem;
+  }
+
+  .experience-subtitle {
+    margin-bottom: 2.5rem;
+    font-size: 1.5rem;
+  }
+
+  .experience-item {
+    padding: 0 0 2.5rem 2.5rem;
+  }
+
+  .experience-icon {
+    left: -18px;
+    width: 34px;
+    height: 34px;
+    padding: 7px;
+    font-size: 18px;
+  }
+
+  .experience-role {
+    font-size: 1.25rem;
+  }
+
+  .experience-description {
+    font-size: .9rem;
+  }
+}

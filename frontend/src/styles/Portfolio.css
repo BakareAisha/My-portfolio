@@ -1,0 +1,494 @@
+
+#root {
+    overflow: hidden;
+}
+
+.about-section,
+.skills-section,
+.projects-section,
+.experience-section,
+.contact-section,
+.footer-section {
+    width: min(100% - 32px, 1180px);
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 72px 56px;
+    border-top: 1px solid var(--line);
+}
+
+.about-section {
+    margin-top: 0;
+}
+
+.about-container {
+    grid-template-columns: minmax(0, 1.1fr) minmax(300px, 410px);
+    gap: 4rem;
+}
+
+.about-title,
+.skills-title,
+.projects-title,
+.experience-title,
+.contact-title {
+    color: #b65cff;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: .78rem;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.about-subtitle,
+.skills-subtitle,
+.projects-subtitle,
+.experience-subtitle,
+.contact-subtitle {
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: 0;
+    text-transform: none;
+}
+
+.about-subtitle {
+    font-size: 2rem;
+    margin-bottom: 1.2rem;
+}
+
+.about-description,
+.contact-description {
+    color: var(--muted);
+    font-size: .92rem;
+    line-height: 1.7;
+}
+
+.about-description br {
+    display: none;
+}
+
+.about-button {
+    padding: .7rem 1rem;
+    border-color: #9a59e9;
+    color: #d3a5ff;
+    font-size: .8rem;
+}
+
+.about-details {
+    padding: 1.1rem 1.4rem;
+    border: 1px solid var(--line);
+    border-left: 2px solid var(--purple);
+    border-radius: 9px;
+    background: var(--panel-soft);
+}
+
+.about-detail {
+    grid-template-columns: 1.25rem 6.5rem 1fr;
+    padding: .8rem 0;
+    font-size: .78rem;
+}
+
+.about-detail-label {
+    color: #ddd9e6;
+    font-weight: 500;
+}
+
+.about-detail-value {
+    color: var(--muted);
+}
+
+.skills-title {
+    margin-bottom: .55rem;
+}
+
+.skills-subtitle {
+    margin: 0 0 1.5rem;
+    color: #f7f4fb;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.skills-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: .7rem;
+}
+
+.skill-item {
+    min-height: 3.5rem;
+    padding: .8rem .9rem;
+    border: 1px solid rgba(255, 255, 255, .07);
+    border-radius: 5px;
+    background: var(--panel-soft);
+    font-size: .78rem;
+}
+
+.skill-item svg {
+    font-size: 1.35rem;
+}
+
+.projects-header {
+    margin-bottom: 1.7rem;
+}
+
+.projects-heading-group {
+    gap: .4rem;
+}
+
+.projects-title {
+    margin: 0;
+}
+
+.projects-subtitle {
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.view-all-projects-link {
+    color: #bd76ff;
+    font-size: .72rem;
+}
+
+.projects-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: .8rem;
+}
+
+.project-card {
+    min-height: 27rem;
+    border: 1px solid rgba(255, 255, 255, .1);
+    border-radius: 8px;
+    background: var(--panel-soft);
+}
+
+.project-image {
+    min-height: 8.5rem;
+    border-bottom-color: var(--line);
+}
+
+.project-card-content {
+    gap: .7rem;
+    padding: 1rem;
+}
+
+.project-name {
+    font-size: 1rem;
+}
+
+.project-description {
+    color: var(--muted);
+    font-size: .78rem;
+    line-height: 1.5;
+}
+
+.project-technologies {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: .35rem;
+}
+
+.technology-tag {
+    padding: .25rem .45rem;
+    border-color: rgba(255, 255, 255, .15);
+    color: var(--muted);
+    font-size: .65rem;
+}
+
+.project-links {
+    padding: .75rem 1rem 1rem;
+    border-top-color: var(--line);
+}
+
+.project-link {
+    color: #ddd4e8;
+    font-size: .68rem;
+}
+
+.projects-opportunity-card {
+    margin-top: 2rem;
+    padding: 1rem 1.2rem;
+    border-color: rgba(160, 85, 241, .7);
+    border-radius: 8px;
+    background: linear-gradient(90deg, rgba(64, 25, 97, .45), var(--panel-soft));
+    box-shadow: 0 0 25px rgba(139, 92, 246, .14);
+}
+
+.opportunity-text {
+    color: #ddd8e6;
+    font-size: .82rem;
+}
+
+.opportunity-button {
+    padding: .65rem .9rem;
+    background: var(--gradient);
+    font-size: .72rem;
+}
+
+.experience-title {
+    margin-bottom: .45rem;
+}
+
+.experience-subtitle {
+    margin-bottom: 2.7rem;
+    font-size: 1.4rem;
+}
+
+.experience-item {
+    max-width: 760px;
+    padding: 0 0 42px 54px;
+    border-left-color: rgba(155, 92, 255, .38);
+}
+
+.experience-icon {
+    left: -19px;
+    width: 36px;
+    height: 36px;
+    padding: 8px;
+    background: var(--panel-soft);
+    box-shadow: none;
+    font-size: 19px;
+}
+
+.experience-date {
+    margin-bottom: .55rem;
+    padding: 0;
+    border: 0;
+    color: #9d70e8;
+    font-size: .7rem;
+}
+
+.experience-role {
+    margin-bottom: .25rem;
+    font-size: 1rem;
+}
+
+.experience-organization {
+    margin-bottom: .45rem;
+    color: #b951de;
+    font-size: .78rem;
+}
+
+.experience-description {
+    color: var(--muted);
+    font-size: .78rem;
+    line-height: 1.55;
+}
+
+.contact-section {
+    grid-template-columns: minmax(0, 1fr) minmax(350px, 1fr);
+    gap: 4rem;
+}
+
+.contact-title {
+    margin-bottom: .45rem;
+}
+
+.contact-subtitle {
+    margin-bottom: .7rem;
+    font-size: 1.4rem;
+}
+
+.contact-intro {
+    gap: .8rem;
+}
+
+.contact-details {
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.contact-detail {
+    gap: .85rem;
+}
+
+.contact-detail-icon {
+    width: 2.2rem;
+    height: 2.2rem;
+    padding: .4rem;
+    border-radius: 7px;
+    font-size: 1rem;
+}
+
+.contact-detail-label {
+    font-size: .78rem;
+}
+
+.contact-detail-value {
+    color: var(--muted);
+    font-size: .72rem;
+}
+
+.contact-form {
+    min-height: 0;
+    gap: .75rem;
+    padding: 1.2rem;
+    border-radius: 8px;
+    background: var(--panel-soft);
+}
+
+.contact-input,
+.contact-message {
+    padding: .75rem;
+    border-color: rgba(255, 255, 255, .1);
+    border-radius: 5px;
+    color: white;
+    font-size: .78rem;
+}
+
+.contact-message {
+    min-height: 8.5rem;
+}
+
+.contact-submit {
+    padding: .75rem 1rem;
+    border-radius: 5px;
+    background: var(--gradient);
+    font-size: .78rem;
+}
+
+.footer-section {
+    grid-template-columns: 1.5fr 1fr 1fr;
+    margin-top: 0;
+    padding-top: 42px;
+    padding-bottom: 28px;
+}
+
+.footer-logo {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.4rem;
+}
+
+.footer-tagline,
+.footer-link {
+    color: var(--muted);
+    font-size: .75rem;
+}
+
+.footer-heading {
+    margin-bottom: .8rem;
+    font-size: .72rem;
+}
+
+.footer-links {
+    gap: .45rem;
+}
+
+.footer-social-button {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 6px;
+    font-size: .9rem;
+}
+
+.footer-bottom {
+    margin-top: .5rem;
+    padding-top: 1rem;
+    border-top-color: var(--line);
+    font-size: .65rem;
+}
+
+@media (max-width: 760px) {
+
+    .about-section,
+    .skills-section,
+    .projects-section,
+    .experience-section,
+    .contact-section,
+    .footer-section {
+        width: 100%;
+        padding: 46px 20px;
+    }
+
+    .about-container,
+    .contact-section {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .about-subtitle,
+    .skills-subtitle,
+    .projects-subtitle,
+    .experience-subtitle,
+    .contact-subtitle {
+        font-size: 1.3rem;
+    }
+
+    .about-details {
+        padding: .75rem 1rem;
+    }
+
+    .about-detail {
+        grid-template-columns: 1.2rem 5.5rem minmax(0, 1fr);
+        font-size: .7rem;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: .5rem;
+    }
+
+    .skill-item {
+        min-height: 4.2rem;
+        padding: .55rem .3rem;
+        font-size: .65rem;
+    }
+
+    .skill-item svg {
+        font-size: 1.25rem;
+    }
+
+    .projects-header {
+        align-items: flex-start;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card {
+        min-height: 0;
+    }
+
+    .project-image {
+        min-height: 9rem;
+    }
+
+    .projects-opportunity-card {
+        align-items: center;
+    }
+
+    .opportunity-button {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .experience-item {
+        padding-left: 42px;
+    }
+
+    .contact-section {
+        gap: 2rem;
+    }
+
+    .footer-section {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem 1rem;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+
+    .footer-bottom {
+        grid-column: 1 / -1;
+        align-items: center;
+        flex-direction: column;
+        gap: .4rem;
+    }
+}
+
+@media (max-width: 420px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .about-detail {
+        grid-template-columns: 1.1rem 5rem minmax(0, 1fr);
+    }
+}
